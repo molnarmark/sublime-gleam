@@ -1,0 +1,70 @@
+%YAML 1.2
+---
+name: Gleam
+file_extensions:
+  - gleam
+scope: source.gleam
+contexts:
+  main:
+    - match: '"'
+      scope: punctuation.definition.string.begin.gleam
+      push: double_quoted_string
+
+    - match: '//'
+      scope: punctuation.definition.comment.gleam
+      push: line_comment
+
+    - match: '\b(True|False|Nil)\b'
+      scope: constant.language.boolean.gleam
+
+    - match: '{.*?}'
+      scope: constant.language.type.gleam
+
+    - match: '\b(case|if|external|fn|import|let|assert|try|pub|type|opaque|const|todo)\b'
+      scope: keyword.control.gleam
+
+    - match: '-&gt;'
+      scope: keyword.operator.arrow.gleam
+
+    - match: '\|&gt;'
+      scope: keyword.operator.pipe.gleam
+
+    - match: '\.\.'
+      scope: keyword.operator.splat.gleam
+
+    - match: '(&lt;=\.|&gt;=\.|==\.|!=\.|&lt;\.|&gt;\.)'
+      scope: keyword.operator.comparison.float.gleam
+
+    - match: '(&lt;=|&gt;=|==|!=|&lt;|&gt;)'
+      scope: keyword.operator.comparison.int.gleam
+
+    - match: '(&amp;&amp;|\|\|)'
+      scope: keyword.operator.logical.gleam
+
+    - match: '\|'
+      scope: keyword.operator.other.gleam
+
+    - match: '(\+\.|\-\.|/\.|\*\.|%\.)'
+      scope: keyword.operator.arithmetic.float.gleam
+
+    - match: '(\+|\-|/|\*|%)'
+      scope: keyword.operator.arithmetic.int.gleam
+
+    - match: '='
+      scope: keyword.operator.assignment.gleam
+
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.gleam
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.gleam
+    - match: '\\.'
+      scope: constant.character.escape.gleam
+    - match: '"'
+      scope: punctuation.definition.string.end.gleam
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.gleam
+    - match: $
+      pop: true
