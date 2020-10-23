@@ -1,0 +1,6 @@
+[
+  {
+    "caption": "Gleam: Format",
+    "command": "gleam_fmt"
+  }
+]

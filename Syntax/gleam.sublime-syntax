@@ -23,10 +23,10 @@ contexts:
     - match: '\b(case|if|external|fn|import|let|assert|try|pub|type|opaque|const|todo)\b'
       scope: keyword.control.gleam
 
-    - match: '-&gt;'
+    - match: '->'
       scope: keyword.operator.arrow.gleam
 
-    - match: '\|&gt;'
+    - match: '\|>'
       scope: keyword.operator.pipe.gleam
 
     - match: '\.\.'
