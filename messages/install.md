@@ -1,8 +1,8 @@
 # Thank you for installing Gleam!
 
-This plugin supports the built-in **gleam format** command, which can be toggled on and off via the settings. This is enabled by default.
+## Settings
 
-To turn this off, head over to
+`format_on_save` is enabled by default, to disable head over to
 
 - Preferences
 - Package Settings
@@ -10,4 +10,12 @@ To turn this off, head over to
 - Gleam Settings
 - change `format_on_save` to false
 
-## Enjoy!
+If you prefer using a key binding to format, add this to your **Sublime Keymap** with the preferred key:
+
+```json
+{ "keys": ["<key>"], "command": "gleam_fmt" }
+```
+
+Alternatively, you can also format via the menu, `CTRL + Shift + P` and select the `Gleam: Format` option.
+
+### Enjoy!
