@@ -24,7 +24,6 @@ class GleamRunOnSave(sublime_plugin.EventListener):
       if not filepath:
         return 0
 
-      print(settings.get('format_on_save'))
       file_extension = os.path.splitext(filepath)[1][1:]
       if file_extension == 'gleam' and settings.get('format_on_save'):
         return format(view.file_name())
